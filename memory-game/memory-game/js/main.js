@@ -1,16 +1,19 @@
 const cards = ["queen", "queen", "king", "king"];
-cardsInPlay = [];
-let cardOne = (cards[0]);
-cardsInPlay.push('cardOne');
-let cardTwo = (cards[2]);
-console.log("User flipped " + cardOne);
-console.log("User flipped " + cardTwo);
-if (cardsInPlay.length = 2){ 
+let cardsInPlay = [];
 
-	console.log("You have selected two cards.");
-} else if (cardsInPlay[0] === (cardsInPlay[2]) {
-	alert("You found a match!");
-} else { 
-	alert("Sorry, try again.");
-};
+let checkForMatch = function() {
+    if (cardsInPlay[0] === cardsInPlay[1]) {                  console.log('You found a match!');
+    } else {
+        console.log('Sorry, try again.');
+    }   
+}
+let flipCard = function(cardId) {
+  console.log("User flipped " + cards[cardId]);
+  cardsInPlay.push(cards[0]);
+  if (cardsInPlay.length === 2) {
+    checkForMatch();
+  }
+}
 
+flipCard(0);
+flipCard(2);
