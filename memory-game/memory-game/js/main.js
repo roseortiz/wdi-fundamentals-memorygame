@@ -28,14 +28,26 @@ let checkForMatch = function() {
         console.log('Sorry, try again.');
     }   
 }
-let flipCard = function(cardId) {
-  console.log("User flipped " + cards[cardId].rank);
+let flipCard = function() {
+  let cardId = this.getAttribute('data-id');
+ this.setAttribute("src", cards[cardId]. cardImage); 
   cardsInPlay.push(cards[cardId].rank);
   if (cardsInPlay.length === 2)
     checkForMatch();
+}
+{
+   console.log("User flipped " + cards[cardId].rank);
  console.log(cards[cardId].cardImage);
     console.log(cards[cardId].suit);
  }
+let createBoard = function () {
+  for (let i = 0; i < cards.length; i++) {
+ let cardElement = document.createElement ('img');
+    cardElement.setAttribute('img')
+    cardElement.setAttribute('data-id', i);
+   cardElement.addEventListener('click', flipCard);
+   document.getElementById('game-board').appendChild(cardElement);
+}
+};
 
-flipCard(0);
-flipCard(2);
+createboard();
